@@ -1,8 +1,0 @@
-nf-core/slamseq	v1.0.0
-Nextflow	v20.07.1
-FastQC	v0.11.9
-TrimGalore	v0.6.4_dev
-Slamdunk	v0.4.3
-R	v4.0.2
-DESeq2	v1.28.1
-MultiQC	v1.9
