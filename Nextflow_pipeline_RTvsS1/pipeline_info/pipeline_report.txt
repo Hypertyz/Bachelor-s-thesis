@@ -1,0 +1,67 @@
+========================================
+ nf-core/slamseq v1.0.0
+========================================
+=======
+----------------------------------------------------
+                                        ,--./,-.
+        ___     __   __   __   ___     /,-._.--~\
+  |\ | |__  __ /  ` /  \ |__) |__         }  {
+  | \| |       \__, \__/ |  \ |___     \`-._,-`-,
+                                        `._,._,'
+  nf-core/slamseq v1.0.0
+----------------------------------------------------
+
+Run Name: marvelous_aryabhata
+
+## nf-core/slamseq execution completed successfully! ##
+
+
+The workflow was completed at 2020-12-04T06:38:16.401355+01:00 (duration: 9h 24m 55s)
+
+The command used to launch the workflow was as follows:
+
+  nextflow run 'https://github.com/Hypertyz/slamseq' --input RTS0_nf_input_3.tsv --fasta ./Resources/GRCm38.primary_assembly.genome.fa --bed ./Resources/Gene_code_region/3UTRs.bed --mapping ./Resources/Gene_code_region/3UTRs.bed --polyA 10 --base_quality 27 --trim5 0 --read_length 150 --outdir ./nextflow_RTS0_9a/ --max_memory 24.GB --endtoend False --multimappers True --conversions 2 --min_converage 15 --var_fraction 0.8 --pvalue 0.05
+
+
+
+Pipeline Configuration:
+-----------------------
+ - Pipeline Release: master
+ - Run Name: marvelous_aryabhata
+ - Input: RTS0_nf_input_3.tsv
+ - Fasta Ref: ./Resources/GRCm38.primary_assembly.genome.fa
+ - Vcf: false
+ - Trim 5: 0
+ - Poly-A: 10
+ - Multimappers: true
+ - Quantseq: false
+ - Endtoend: false
+ - Minimum coverage: 10
+ - Variant fraction: 0.8
+ - Conversions: 2
+ - base_quality: 27
+ - read_length: 150
+ - P-value: 0.05
+ - Skip Trimming: false
+ - Skip DESeq2: false
+ - Max Resources: 24.GB memory, 24 cpus, 10d time per job
+ - Output dir: ./nextflow_RTS0_9a/
+ - Launch dir: /mnt/s/Bachelors_data
+ - Working dir: /mnt/s/Bachelors_data/work
+ - Script dir: /home/jake/.nextflow/assets/Hypertyz/slamseq
+ - User: jake
+ - Config Profile: standard
+ - Date Started: 2020-12-03T21:13:21.787119+01:00
+ - Date Completed: 2020-12-04T06:38:16.401355+01:00
+ - Pipeline script file path: /home/jake/.nextflow/assets/Hypertyz/slamseq/main.nf
+ - Pipeline script hash ID: 747981cbee1e053450cb89877e0e0dcc
+ - Pipeline repository Git URL: https://github.com/Hypertyz/slamseq.git
+ - Pipeline repository Git Commit: 411262b82bbda599a3e9d958d42a63e91a75c268
+ - Pipeline Git branch/tag: master
+ - Nextflow Version: 20.07.1
+ - Nextflow Build: 5412
+ - Nextflow Compile Timestamp: 24-07-2020 15:18 UTC
+
+--
+nf-core/slamseq
+https://github.com/nf-core/slamseq

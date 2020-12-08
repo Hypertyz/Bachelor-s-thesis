@@ -1,0 +1,17 @@
+# Trim read1
+bbduk.sh -Xmx24g in=*raw data of read1* out=*output directory* ftl=15 mbq=10
+
+# Trim read2
+bbduk.sh -Xmx24g in=*raw data of read2* out=*output directory* minlen=6 ftl=2 ftr=7 mbq=10
+
+# Repair
+repair.sh -Xmx24g in=*trimmed read1* in2=*trimmed read2* out=*output directory for read1* out2=*output directory for read2*
+
+# Demultiplex
+tagdust -t 16 -fe 1 -arch *text file contains architecture* -o *output directory* *input file*
+
+# Compress
+gzip *demultiplex directory contains fq files*
+
+# Nextflow
+ nextflow run https://github.com/Hypertyz/slamseq --input RTS0_nf_input_3.tsv --fasta *reference genome fasta file* --bed *reference BED file* --mapping *reference BED file* --polyA 10 --base_quality 27 --trim5 0 --read_length 150 --outdir *output directory* --max_memory 24.GB --endtoend False --multimappers True --conversions 2 --min_converage 15 --var_fraction 0.8 --pvalue 0.05

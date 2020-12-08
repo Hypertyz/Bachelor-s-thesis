@@ -1,0 +1,9 @@
+Module	Section	Sample Name	Source
+FastQC	all_sections	tagger-pooled-library-2S_S1_L001_R1_001	/mnt/s/Bachelors_data/FastQC_raw/tagger-pooled-library-2S_S1_L001_R1_001_fastqc.zip
+FastQC	all_sections	tagger-pooled-library-2S_S1_L001_R2_001	/mnt/s/Bachelors_data/FastQC_raw/tagger-pooled-library-2S_S1_L001_R2_001_fastqc.zip
+FastQC	all_sections	tagger-pooled-library-2S_S1_L002_R1_001	/mnt/s/Bachelors_data/FastQC_raw/tagger-pooled-library-2S_S1_L002_R1_001_fastqc.zip
+FastQC	all_sections	tagger-pooled-library-2S_S1_L002_R2_001	/mnt/s/Bachelors_data/FastQC_raw/tagger-pooled-library-2S_S1_L002_R2_001_fastqc.zip
+FastQC	all_sections	tagger-pooled-library-2S_S1_L003_R1_001	/mnt/s/Bachelors_data/FastQC_raw/tagger-pooled-library-2S_S1_L003_R1_001_fastqc.zip
+FastQC	all_sections	tagger-pooled-library-2S_S1_L003_R2_001	/mnt/s/Bachelors_data/FastQC_raw/tagger-pooled-library-2S_S1_L003_R2_001_fastqc.zip
+FastQC	all_sections	tagger-pooled-library-2S_S1_L004_R1_001	/mnt/s/Bachelors_data/FastQC_raw/tagger-pooled-library-2S_S1_L004_R1_001_fastqc.zip
+FastQC	all_sections	tagger-pooled-library-2S_S1_L004_R2_001	/mnt/s/Bachelors_data/FastQC_raw/tagger-pooled-library-2S_S1_L004_R2_001_fastqc.zip
