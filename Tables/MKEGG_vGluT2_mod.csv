@@ -1,0 +1,4 @@
+"","ID","Description","GeneRatio","BgRatio","pvalue","p.adjust","qvalue","geneID","Count"
+"M00035","M00035","Methionine degradation","1/2","11/844",0.0259117460210376,0.0282504933295104,NA,"232087",1
+"M00143","M00143","NADH dehydrogenase (ubiquinone) Fe-S protein/flavoprotein complex, mitochondria","1/2","11/844",0.0259117460210376,0.0282504933295104,NA,"227197",1
+"M00034","M00034","Methionine salvage pathway","1/2","12/844",0.0282504933295104,0.0282504933295104,NA,"232087",1
