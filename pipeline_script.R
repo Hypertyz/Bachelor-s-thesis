@@ -303,6 +303,19 @@ ggplot(df,
   ggtitle("GO pathway enrichment")
 
 # vGluT2
+df1 <- data.frame(CC_vGluT2_mod[1:5,])
+df1 <- rbind(df1, MF_vGluT2_mod[1:5,])
+df1 <- rbind(df1, BP_vGluT2_mod[1:5,])
+Type <- c("CC","CC","CC","CC","CC","MF","MF","MF","MF","MF", "BP","BP","BP","BP","BP")
+df1 <- cbind(df1, Type)
+library(ggplot2)
+ggplot(df1,
+       aes(x = Type, y = sort(Description))) +
+  geom_point(aes(size = GeneRatio, color = p.adjust)) +
+  theme_bw(base_size = 10) +
+  scale_colour_gradient(limits=c(0, 0.10), low="red", high = "blue") +
+  ylab(NULL) + xlab("Functional group") +
+  ggtitle("GO pathway enrichment")
 
 # Enrichment map
 emapplot(KEGG_Gad2_mod)
