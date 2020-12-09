@@ -230,6 +230,7 @@ MD_vGluT2 <- modulediscoverer(MODifieR_input = vGluT2_input, ppi_network = ppi_n
 CS_vGluT2 <- clique_sum_exact(vGluT2_input, db = *path to the sqlite db*)
 
 # Venn diagram
+# Gad2
 set1 <- CS_GAD2$module_genes
 set2 <- WGCNA_Gad2$module_genes
 set3 <- MCODE_GAD2$module_genes
@@ -246,6 +247,17 @@ draw.triple.venn(area1 = length(set1),
                  fill = c("steelblue1", "yellowgreen", "indianred1") ,
                  cex = 2, cat.cex = 2, cat.fontfamily = rep("serif", 3))
 
+# vGluT2
+set4 <- CCLIQUE_vGluT2$module_genes
+set5 <- MCODE_vGluT2$module_genes
+draw.pairwise.venn(area1 = length(set4),
+                 area2 = length(set5),
+                 cross.area = length(intersect(set4, set5)),
+                 category = c("Clique Sum", "Correlation Clique"),
+                 lty = "blank",
+                 fill = c("steelblue1", "yellowgreen") ,
+                 cex = 2, cat.cex = 2, cat.fontfamily = rep("serif", 2))
+
 # Enrichment analysis
 Gad2_genes_mod <- intersect(intersect(set1, set2), set3)
 KEGG_Gad2_mod <- enrichKEGG(gene = Gad2_genes_mod, organism = "mmu", universe = as.character(uni))
@@ -254,7 +266,7 @@ CC_Gad2_mod <- enrichGO(Gad2_genes_mod, OrgDb = "org.Mm.eg.db", ont = "CC")
 MF_Gad2_mod <- enrichGO(Gad2_genes_mod, OrgDb = "org.Mm.eg.db", ont = "MF")
 BP_Gad2_mod <- enrichGO(Gad2_genes_mod, OrgDb = "org.Mm.eg.db", ont = "BP")
 
-vGluT2_genes_mod <- intersect(intersect(set1, set2), set3)
+vGluT2_genes_mod <- intersect(set4, set5)
 KEGG_vGluT2_mod <- enrichKEGG(gene = vGluT2_genes_mod, organism = "mmu", universe = as.character(uni))
 MKEGG_vGluT2_mod <- enrichMKEGG(gene = vGluT2_genes_mod, organism = "mmu")
 CC_vGluT2_mod <- enrichGO(vGluT2_genes_mod, OrgDb = "org.Mm.eg.db", ont = "CC")
@@ -270,11 +282,12 @@ dotplot(BP_Gad2_mod, title = "Gad2 BP GO enrichment for MODifieR gene module")
 
 dotplot(KEGG_vGluT2_mod, title = "vGluT2 KEGG enrichment for MODifieR gene module")
 dotplot(MKEGG_vGluT2_mod, title = "vGluT2 MKEGG enrichment for MODifieR gene module")
-dotplot(CC_vGluT2_mod, title = "vGluT2 GO enrichment for MODifieR gene module")
-dotplot(MF_vGluT2_mod, title = "vGluT2 GO enrichment for MODifieR gene module")
-dotplot(BP_vGluT2_mod, title = "vGluT2 GO enrichment for MODifieR gene module")
+dotplot(CC_vGluT2_mod, title = "vGluT2 CC GO enrichment for MODifieR gene module")
+dotplot(MF_vGluT2_mod, title = "vGluT2 MF GO enrichment for MODifieR gene module")
+dotplot(BP_vGluT2_mod, title = "vGluT2 BP GO enrichment for MODifieR gene module")
 
 # Combine dot plot
+# Gad2
 df <- data.frame(CC_Gad2_mod[1:5,])
 df <- rbind(df, MF_Gad2_mod[1,])
 df <- rbind(df, BP_Gad2_mod[1:5,])
@@ -288,6 +301,8 @@ ggplot(df,
   scale_colour_gradient(limits=c(0, 0.10), low="red", high = "blue") +
   ylab(NULL) + xlab("Functional group") +
   ggtitle("GO pathway enrichment")
+
+# vGluT2
 
 # Enrichment map
 emapplot(KEGG_Gad2_mod)
